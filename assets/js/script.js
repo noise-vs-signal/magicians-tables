@@ -1,28 +1,15 @@
 $(function () {
+    // An array containing objects with information about the entities.
+    var entities = [],
 
-	// Globals variables
-
-		// 	An array containing objects with information about the products.
-	var products = [],
-
-		// Our filters object will contain an array of values for each filter
-
-		// Example:
-		// filters = {
-		// 		"manufacturer" = ["Apple","Sony"],
-		//		"storage" = [16]
-		//	}
-		filters = {};
-
+    // Our filters object will contain an array of values for each filter
+    filters = {};
 
 	//	Event handlers for frontend navigation
-
 	//	Checkbox filtering
-
 	var checkboxes = $('.all-entities input[type=checkbox]');
 
 	checkboxes.click(function () {
-
 		var that = $(this),
 			specName = that.attr('name');
 
@@ -39,7 +26,6 @@ $(function () {
 
 			// Change the url hash;
 			createQueryHash(filters);
-
 		}
 
 		// When a checkbox is unchecked we need to remove its value from the filters object.
@@ -58,7 +44,6 @@ $(function () {
 				if(!filters[specName].length){
 					delete filters[specName];
 				}
-
 			}
 
 			// Change the url hash;
@@ -73,13 +58,13 @@ $(function () {
 	});
 
 
-	// Single product page buttons
+	// Single entity page buttons
 
-	var singleProductPage = $('.single-product');
+	var singleEntityPage = $('.single-entity');
 
-	singleProductPage.on('click', function (e) {
+	singleEntityPage.on('click', function (e) {
 
-		if (singleProductPage.hasClass('visible')) {
+		if (singleEntityPage.hasClass('visible')) {
 
 			var clicked = $(e.target);
 
@@ -96,14 +81,14 @@ $(function () {
 
 	// These are called on page load
 
-	// Get data about our products from entities.json.
+	// Get data about our entities from entities.json.
 	$.getJSON( "entities.json", function( data ) {
 
 		// Write the data into our global variable.
-		products = data;
+		entities = data;
 
-		// Call a function to create HTML for all the products.
-		generateAllProductsHTML(products);
+		// Call a function to create HTML for all the entities.
+		generateAllProductsHTML(entities);
 
 		// Manually trigger a hashchange to start the app.
 		$(window).trigger('hashchange');
@@ -133,23 +118,23 @@ $(function () {
 			// The "Homepage".
 			'': function() {
 
-				// Clear the filters object, uncheck all checkboxes, show all the products
+				// Clear the filters object, uncheck all checkboxes, show all the entities
 				filters = {};
 				checkboxes.prop('checked',false);
 
-				renderProductsPage(products);
+				renderProductsPage(entities);
 			},
 
-			// Single Products page.
+			// Single entities page.
 			'#product': function() {
 
 				// Get the index of which product we want to show and call the appropriate function.
 				var index = url.split('#product/')[1].trim();
 
-				renderSingleProductPage(index, products);
+				renderSingleEntityPage(index, entities);
 			},
 
-			// Page with filtered products
+			// Page with filtered entities
 			'#filter': function() {
 
 				// Grab the string after the '#filter/' keyword. Call the filtering function.
@@ -165,7 +150,7 @@ $(function () {
 					return;
 				}
 
-				renderFilterResults(filters, products);
+				renderFilterResults(filters, entities);
 			}
 
 		};
@@ -183,7 +168,7 @@ $(function () {
 
 
 	// This function is called only once - on page load.
-	// It fills up the products list via a handlebars template.
+	// It fills up the entities list via a handlebars template.
 	// It recieves one parameter - the data we took from entities.json.
 	function generateAllProductsHTML(data){
 
@@ -195,7 +180,7 @@ $(function () {
 		list.append (theTemplate(data));
 
 
-		// Each products has a data-index attribute.
+		// Each entities has a data-index attribute.
 		// On click change the url hash to open up a preview for this product only.
 		// Remember: every hashchange triggers the render function.
 		list.find('li').on('click', function (e) {
@@ -213,10 +198,10 @@ $(function () {
 		var page = $('.all-entities'),
 			allProducts = $('.all-entities .entities-list > li');
 
-		// Hide all the products in the products list.
+		// Hide all the entities in the entities list.
 		allProducts.addClass('hidden');
 
-		// Iterate over all of the products.
+		// Iterate over all of the entities.
 		// If their ID is somewhere in the data object remove the hidden class to reveal them.
 		allProducts.each(function () {
 
@@ -236,11 +221,11 @@ $(function () {
 	}
 
 
-	// Opens up a preview for one of the products.
-	// Its parameters are an index from the hash and the products object.
-	function renderSingleProductPage(index, data){
+	// Opens up a preview for one of the entities.
+	// Its parameters are an index from the hash and the entities object.
+	function renderSingleEntityPage(index, data){
 
-		var page = $('.single-product'),
+		var page = $('.single-entity'),
 			container = $('.preview-large');
 
 		// Find the wanted product by iterating the data object and searching for the chosen index.
@@ -262,8 +247,8 @@ $(function () {
 
 	// Find and render the filtered data results. Arguments are:
 	// filters - our global variable - the object with arrays about what we are searching for.
-	// products - an object with the full products list (from product.json).
-	function renderFilterResults(filters, products){
+	// entities - an object with the full entities list (from product.json).
+	function renderFilterResults(filters, entities){
 
 			// This array contains all the possible filter criteria.
 		var criteria = ['manufacturer','storage','os','camera'],
@@ -281,23 +266,23 @@ $(function () {
 			if(filters[c] && filters[c].length){
 
 
-				// After we've filtered the products once, we want to keep filtering them.
-				// That's why we make the object we search in (products) to equal the one with the results.
+				// After we've filtered the entities once, we want to keep filtering them.
+				// That's why we make the object we search in (entities) to equal the one with the results.
 				// Then the results array is cleared, so it can be filled with the newly filtered data.
 				if(isFiltered){
-					products = results;
+					entities = results;
 					results = [];
 				}
 
 
-				// In these nested 'for loops' we will iterate over the filters and the products
+				// In these nested 'for loops' we will iterate over the filters and the entities
 				// and check if they contain the same values (the ones we are filtering by).
 
 				// Iterate over the entries inside filters.criteria (remember each criteria contains an array).
 				filters[c].forEach(function (filter) {
 
-					// Iterate over the products.
-					products.forEach(function (item){
+					// Iterate over the entities.
+					entities.forEach(function (item){
 
 						// If the product has the same specification value as the one in the filter
 						// push it inside the results array and mark the isFiltered flag true.
@@ -329,7 +314,7 @@ $(function () {
 		});
 
 		// Call the renderProductsPage.
-		// As it's argument give the object with filtered products.
+		// As it's argument give the object with filtered entities.
 		renderProductsPage(results);
 	}
 
