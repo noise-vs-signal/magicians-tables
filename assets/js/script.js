@@ -19,7 +19,7 @@ $(function () {
 
 	//	Checkbox filtering
 
-	var checkboxes = $('.all-products input[type=checkbox]');
+	var checkboxes = $('.all-entities input[type=checkbox]');
 
 	checkboxes.click(function () {
 
@@ -96,8 +96,8 @@ $(function () {
 
 	// These are called on page load
 
-	// Get data about our products from products.json.
-	$.getJSON( "products.json", function( data ) {
+	// Get data about our products from entities.json.
+	$.getJSON( "entities.json", function( data ) {
 
 		// Write the data into our global variable.
 		products = data;
@@ -184,12 +184,12 @@ $(function () {
 
 	// This function is called only once - on page load.
 	// It fills up the products list via a handlebars template.
-	// It recieves one parameter - the data we took from products.json.
+	// It recieves one parameter - the data we took from entities.json.
 	function generateAllProductsHTML(data){
 
-		var list = $('.all-products .products-list');
+		var list = $('.all-entities .entities-list');
 
-		var theTemplateScript = $("#products-template").html();
+		var theTemplateScript = $("#entities-template").html();
 		//Compile the template​
 		var theTemplate = Handlebars.compile (theTemplateScript);
 		list.append (theTemplate(data));
@@ -210,8 +210,8 @@ $(function () {
 	// This function receives an object containing all the product we want to show.
 	function renderProductsPage(data){
 
-		var page = $('.all-products'),
-			allProducts = $('.all-products .products-list > li');
+		var page = $('.all-entities'),
+			allProducts = $('.all-entities .entities-list > li');
 
 		// Hide all the products in the products list.
 		allProducts.addClass('hidden');

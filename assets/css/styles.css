@@ -71,7 +71,6 @@ header h2.tzine a{
 	Main Content
 ------------------*/
 
-
 .main-content{
 	box-sizing: border-box;
 	text-align: center;
@@ -94,9 +93,8 @@ header h2.tzine a{
 
 }
 
-
 /*-------------------
-	All Products Page
+	All Entities Page
 --------------------*/
 
 /*	Filter Form	*/
@@ -154,14 +152,13 @@ header h2.tzine a{
 	margin-top: 10px;
 }
 
+/* Entities List */
 
-/*	Products List	*/
-
-.all-products h3{
+.all-entities h3{
 	opacity: 0;
 }
 
-.products-list{
+.entities-list{
 	list-style:none;
 	margin-left:225px;
 	max-width: 1500px;
@@ -171,15 +168,15 @@ header h2.tzine a{
 	font-size: 0;
 }
 
-.all-products.visible .products-list,
-.all-products.visible .filters,
-.all-products.visible h3{
+.all-entities.visible .entities-list,
+.all-entities.visible .filters,
+.all-entities.visible h3{
 	opacity: 1;
 	transition: 1s;
 	pointer-events: auto;
 }
 
-.products-list > li{
+.entities-list > li{
 	box-sizing:border-box;
 	display: inline-block;
 	cursor: pointer;
@@ -198,14 +195,14 @@ header h2.tzine a{
 	padding: 25px;
 }
 
-.products-list > li.hidden{
+.entities-list > li.hidden{
 	opacity: 0.2;
 	pointer-events: none;
 }
 
-/* The product image */
+/* The entity image */
 
-.products-list .product-photo{
+.entities-list .product-photo{
 	display: block;
 	text-align: center;
 	box-shadow : 0 0 20px 8px #f3f3f3 inset;
@@ -218,7 +215,7 @@ header h2.tzine a{
 
 /* The product name */
 
-.products-list h2{
+.entities-list h2{
 	display: block;
 	font-size: 18px;
 	white-space: nowrap;
@@ -228,14 +225,14 @@ header h2.tzine a{
 	margin:0;
 }
 
-.products-list h2 a{
+.entities-list h2 a{
 	text-decoration: none;
 	color: #2B2E31;
 }
 
 /* Product description */
 
-.products-list .product-description{
+.entities-list .product-description{
 	margin-top: 20px;
 
 	color: #5d5d5d;
@@ -249,22 +246,22 @@ header h2.tzine a{
 	list-style: none;
 }
 
-.products-list .product-description li{
+.entities-list .product-description li{
 	display: inline-block;
 	margin-right: 5px;
 }
 
-.products-list .product-description li:first-child{
+.entities-list .product-description li:first-child{
 	display: block;
 }
 
-.products-list .product-description li span{
+.entities-list .product-description li span{
 	font-weight: bold;
 }
 
 /* Price and order button */
 
-.products-list button{
+.entities-list button{
 	border-radius: 2px;
 	background-color:  #87bae1;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
@@ -278,7 +275,7 @@ header h2.tzine a{
 	height: 32px;
 }
 
-.products-list .product-price{
+.entities-list .product-price{
 	float: right;
 
 	color:  #4e4e4e;
@@ -289,7 +286,7 @@ header h2.tzine a{
 	margin: 0;
 }
 
-.products-list .highlight{
+.entities-list .highlight{
 	position: absolute;
 	top:0;
 	left:0;
@@ -300,7 +297,7 @@ header h2.tzine a{
 	transition: 0.4s;
 }
 
-.products-list > li:hover .highlight{
+.entities-list > li:hover .highlight{
 	opacity: 1;
 }
 
@@ -308,11 +305,11 @@ header h2.tzine a{
 
 @media (max-width: 800px){
 
-	.products-list .product-photo{
+	.entities-list .product-photo{
 		width: 225px;
 	}
 
-	.products-list .product-description{
+	.entities-list .product-description{
 		max-width: 225px;
 	}
 }

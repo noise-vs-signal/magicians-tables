@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
 
-	<title>Single Page App Without A Framework</title>
+	<title>Magician's Tables</title>
 
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
 	<link href="assets/css/styles.css" rel="stylesheet">
@@ -14,13 +14,12 @@
 <body>
 
 	<header class="compact">
-		<h2 class="tzine"><a href="http://tutorialzine.com/2015/02/single-page-app-without-a-framework/">Back to article</a></h2>
-		<h1><a href="#">Single Page App Without A Framework</a></h1>
+		<h1><a href="#">Magician's Tables</a></h1>
 	</header>
 
 	<div class="main-content">
 
-		<div class="all-products page">
+		<div class="all-entities page">
 
 			<div class="filters">
 				<form>
@@ -62,8 +61,8 @@
 
 			</div>
 
-			<ul class="products-list">
-				<script id="products-template" type="x-handlebars-template">​
+			<ul class="entities-list">
+				<script id="entities-template" type="x-handlebars-template">​
 					{{#each this}}
 						<li data-index="{{id}}">
 							<a href="#" class="product-photo"><img src="{{image.small}}" height="130" alt="{{name}}"/></a>
