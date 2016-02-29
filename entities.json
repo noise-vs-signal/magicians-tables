@@ -1,0 +1,179 @@
+[
+  {
+    "id": "1",
+    "name": "Aries",
+    "numbers": {
+        "number": 10,
+        "root_number": 1,
+        "binary_number": 01,
+        "elemental_numbers": [1, 5, 9],   
+    },
+    "coordinates": {
+        "coordinates": "(0, -1)",
+        "direction": "South",
+        "musical_note": "F"
+    },
+    "polarity": {
+        "charge": "Positive",
+        "gender": "Male"
+    },
+    principles: {
+        "action": "Active",
+        "magical_principle": "To Will",
+        "psychological_principle": "Will"
+    },
+    "elements": {
+        "element": "Fire",
+        "tattva": "Tejas",
+        "guna": "Rajas",
+        "elemental": "Salamander",
+        "characteristics": ["Hot", "Dry"]
+    },
+    "qabalah": {
+        "world": "Aziluth",
+        "sephiroth": "Tipareth",
+        "qliphoth": "Thagirion",
+        "order": "Divine Names",
+        "soul": "Chiah",
+        "god_name": "ADONAI"
+    },
+    "tarot": {
+        "trump": "Judgement",
+        "court": "Kings",
+        "suit": "Wands",
+        "playing_cards_suit": "Clubs",
+        "treasure": "Spear"
+    },
+    "astrology": {
+        "constellation": "Aries",
+        "sign": "Ram",
+        "type": "Cardinal",
+        "ruler": "Mars",
+        "exalted": "Sun",
+        "month": "April",
+        "season": "Spring",
+        "day": "Sunday",
+        "alchemical_operation": "Calcination"
+    },
+    "alphabets": {
+        "hebrew": "Tzaddi",
+        "greek": "Iota",
+        "latin": "I"
+    },
+    "spirits": {
+        "gods": ["Shiva", "Zeus"],
+        "goddesses": ["Parvati", "Hera"],
+        "angels": ["Michael"],
+        "demons": ["Sorath"]
+    },
+    nature: {
+        "element": "Sulphur",
+        "metals": ["Gold"],
+        "crystals": ["Citrinas", "Ametrine"],
+        "plants": ["Sunflower"],
+        "animals": ["Lion", "Unicorn"],
+        "birds": ["Eagle", "Phoenix"],
+    },
+    "color": {
+        "king Scale": "Clear Pink Rose",
+        "Queen Scale": "Yellow",
+        "Emperor Scale": "Rich Salmon",
+        "Empress Scale": "Gold Amber",
+        "Sephirotic Colour": "Whitish Red"
+    },
+    "image": {
+        "small": "assets/images/zodiac/Aries.svg",
+        "large": "assets/images/zodiac/Aries.svg"
+    },
+    "url": "https://en.wikipedia.org/wiki/Aries_%28astrology%29",
+    "description": "Aries is the first astrological sign in the Zodiac, spanning the first 30 degrees of celestial longitude. Under the tropical zodiac, the Sun transits this sign mostly between March 21 and April 20 each year."
+  },
+  {
+    "id": "2",
+    "name": "Taurus",
+    "numbers": {
+        "number": 10,
+        "root_number": 1,
+        "binary_number": 01,
+        "elemental_numbers": [1, 5, 9],   
+    },
+    "coordinates": {
+        "coordinates": "(0, -1)",
+        "direction": "South",
+        "musical_note": "F"
+    },
+    "polarity": {
+        "charge": "Positive",
+        "gender": "Male"
+    },
+    principles: {
+        "action": "Active",
+        "magical_principle": "To Will",
+        "psychological_principle": "Will"
+    },
+    "elements": {
+        "element": "Earth",
+        "tattva": "Pritivi",
+        "guna": "Tamas",
+        "elemental": "Gnome",
+        "characteristics": ["Hot", "Dry"]
+    },
+    "qabalah": {
+        "world": "Aziluth",
+        "sephiroth": "Tipareth",
+        "qliphoth": "Thagirion",
+        "order": "Divine Names",
+        "soul": "Chiah",
+        "god_name": "ADONAI"
+    },
+    "tarot": {
+        "trump": "Hierophant",
+        "court": "Kings",
+        "suit": "Pentacles",
+        "playing_cards_suit": "Clubs",
+        "treasure": "Spear"
+    },
+    "astrology": {
+        "constellation": "Taurus",
+        "sign": "Ox",
+        "type": "Fixed",
+        "ruler": "Venus",
+        "exalted": "Moon",
+        "month": "May",
+        "season": "Spring",
+        "day": "Sunday",
+        "alchemical_operation": "Congelation"
+    },
+    "alphabets": {
+        "hebrew": "Tzaddi",
+        "greek": "Iota",
+        "latin": "I"
+    },
+    "spirits": {
+        "gods": ["Shiva", "Zeus"],
+        "goddesses": ["Parvati", "Hera"],
+        "angels": ["Michael"],
+        "demons": ["Sorath"]
+    },
+    nature: {
+        "element": "Sulphur",
+        "metals": ["Gold"],
+        "crystals": ["Citrinas", "Ametrine"],
+        "plants": ["Sunflower"],
+        "animals": ["Lion", "Unicorn"],
+        "birds": ["Eagle", "Phoenix"],
+    },
+    "color": {
+        "king Scale": "Clear Pink Rose",
+        "Queen Scale": "Yellow",
+        "Emperor Scale": "Rich Salmon",
+        "Empress Scale": "Gold Amber",
+        "Sephirotic Colour": "Whitish Red"
+    },
+    "image": {
+      "small": "assets/images/zodiac/Taurus.svg"
+    },
+    "url": "https://en.wikipedia.org/wiki/Taurus_%28astrology%29",
+    "description": "Taurus is the second astrological sign in the present Zodiac. The symbol of the bull is based on the Cretan Bull, the white bull that fathered the Minotaur who was killed by Theseus."
+  }
+]
