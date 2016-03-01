@@ -57,15 +57,11 @@ $(function () {
 		window.location.hash = '#';
 	});
 
-
 	// Single entity page buttons
-
 	var singleEntityPage = $('.single-entity');
-
 	singleEntityPage.on('click', function (e) {
 
 		if (singleEntityPage.hasClass('visible')) {
-
 			var clicked = $(e.target);
 
 			// If the close button or the background are clicked go to the previous page.
@@ -73,11 +69,8 @@ $(function () {
 				// Change the url hash with the last used filters.
 				createQueryHash(filters);
 			}
-
 		}
-
 	});
-
 
 	// These are called on page load
 
@@ -88,19 +81,17 @@ $(function () {
 		entities = data;
 
 		// Call a function to create HTML for all the entities.
-		generateAllProductsHTML(entities);
+		generateAllEntitiesHTML(entities);
 
 		// Manually trigger a hashchange to start the app.
 		$(window).trigger('hashchange');
 	});
-
 
 	// An event handler with calls the render function on every hashchange.
 	// The render function will show the appropriate content of out page.
 	$(window).on('hashchange', function(){
 		render(decodeURI(window.location.hash));
 	});
-
 
 	// Navigation
 
@@ -112,7 +103,6 @@ $(function () {
 		// Hide whatever page is currently shown.
 		$('.main-content .page').removeClass('visible');
 
-
 		var	map = {
 
 			// The "Homepage".
@@ -122,14 +112,14 @@ $(function () {
 				filters = {};
 				checkboxes.prop('checked',false);
 
-				renderProductsPage(entities);
+				renderEntitiesPage(entities);
 			},
 
 			// Single entities page.
-			'#product': function() {
+			'#item': function() {
 
-				// Get the index of which product we want to show and call the appropriate function.
-				var index = url.split('#product/')[1].trim();
+				// Get the index of which item we want to show and call the appropriate function.
+				var index = url.split('#item/')[1].trim();
 
 				renderSingleEntityPage(index, entities);
 			},
@@ -152,7 +142,6 @@ $(function () {
 
 				renderFilterResults(filters, entities);
 			}
-
 		};
 
 		// Execute the needed function depending on the url keyword (stored in temp).
@@ -163,47 +152,42 @@ $(function () {
 		else {
 			renderErrorPage();
 		}
-
 	}
-
 
 	// This function is called only once - on page load.
 	// It fills up the entities list via a handlebars template.
-	// It recieves one parameter - the data we took from entities.json.
-	function generateAllProductsHTML(data){
-
+	// It takes one parameter - the data we took from entities.json.
+	function generateAllEntitiesHTML(data){
 		var list = $('.all-entities .entities-list');
 
 		var theTemplateScript = $("#entities-template").html();
-		//Compile the template​
-		var theTemplate = Handlebars.compile (theTemplateScript);
-		list.append (theTemplate(data));
+		// Compile the template
+		var theTemplate = Handlebars.compile(theTemplateScript);
+		list.append(theTemplate(data));
 
-
-		// Each entities has a data-index attribute.
-		// On click change the url hash to open up a preview for this product only.
+		// Each entity has a data-index attribute.
+		// On click change the url hash to open up a preview for this entity only.
 		// Remember: every hashchange triggers the render function.
 		list.find('li').on('click', function (e) {
 			e.preventDefault();
 
-			var productIndex = $(this).data('index');
+			var entityIndex = $(this).data('index');
 
-			window.location.hash = 'product/' + productIndex;
+			window.location.hash = 'item/' + entityIndex;
 		})
 	}
 
-	// This function receives an object containing all the product we want to show.
-	function renderProductsPage(data){
-
+	// This function receives an object containing all the item we want to show.
+	function renderEntitiesPage(data){
 		var page = $('.all-entities'),
-			allProducts = $('.all-entities .entities-list > li');
+			allEntities = $('.all-entities .entities-list > li');
 
 		// Hide all the entities in the entities list.
-		allProducts.addClass('hidden');
+		allEntities.addClass('hidden');
 
 		// Iterate over all of the entities.
 		// If their ID is somewhere in the data object remove the hidden class to reveal them.
-		allProducts.each(function () {
+		allEntities.each(function () {
 
 			var that = $(this);
 
@@ -217,22 +201,19 @@ $(function () {
 		// Show the page itself.
 		// (the render function hides all pages so we need to show the one we want).
 		page.addClass('visible');
-
 	}
-
 
 	// Opens up a preview for one of the entities.
 	// Its parameters are an index from the hash and the entities object.
 	function renderSingleEntityPage(index, data){
-
 		var page = $('.single-entity'),
 			container = $('.preview-large');
 
-		// Find the wanted product by iterating the data object and searching for the chosen index.
+		// Find the wanted entity by iterating the data object and searching for the chosen index.
 		if(data.length){
 			data.forEach(function (item) {
 				if(item.id == index){
-					// Populate '.preview-large' with the chosen product's data.
+					// Populate '.preview-large' with the chosen entity's data.
 					container.find('h3').text(item.name);
 					container.find('img').attr('src', item.image.large);
 					container.find('p').text(item.description);
@@ -242,15 +223,14 @@ $(function () {
 
 		// Show the page.
 		page.addClass('visible');
-
 	}
 
 	// Find and render the filtered data results. Arguments are:
 	// filters - our global variable - the object with arrays about what we are searching for.
-	// entities - an object with the full entities list (from product.json).
+	// entities - an object with the full entities list (from entities.json).
 	function renderFilterResults(filters, entities){
 
-			// This array contains all the possible filter criteria.
+        // This array contains all the possible filter criteria.
 		var criteria = ['manufacturer','storage','os','camera'],
 			results = [],
 			isFiltered = false;
@@ -259,12 +239,10 @@ $(function () {
 		// We will be checking them again one by one.
 		checkboxes.prop('checked', false);
 
-
 		criteria.forEach(function (c) {
 
 			// Check if each of the possible filter criteria is actually in the filters object.
 			if(filters[c] && filters[c].length){
-
 
 				// After we've filtered the entities once, we want to keep filtering them.
 				// That's why we make the object we search in (entities) to equal the one with the results.
@@ -273,7 +251,6 @@ $(function () {
 					entities = results;
 					results = [];
 				}
-
 
 				// In these nested 'for loops' we will iterate over the filters and the entities
 				// and check if they contain the same values (the ones we are filtering by).
@@ -284,7 +261,7 @@ $(function () {
 					// Iterate over the entities.
 					entities.forEach(function (item){
 
-						// If the product has the same specification value as the one in the filter
+						// If the entity has the same specification value as the one in the filter
 						// push it inside the results array and mark the isFiltered flag true.
 
 						if(typeof item.specs[c] == 'number'){
@@ -300,7 +277,6 @@ $(function () {
 								isFiltered = true;
 							}
 						}
-
 					});
 
 					// Here we can make the checkboxes representing the filters true,
@@ -310,14 +286,12 @@ $(function () {
 					}
 				});
 			}
-
 		});
 
-		// Call the renderProductsPage.
+		// Call the renderEntitiesPage.
 		// As it's argument give the object with filtered entities.
-		renderProductsPage(results);
+		renderEntitiesPage(results);
 	}
-
 
 	// Shows the error page.
 	function renderErrorPage(){
@@ -337,7 +311,5 @@ $(function () {
 			// If it's empty change the hash to '#' (the homepage).
 			window.location.hash = '#';
 		}
-
 	}
-
 });
