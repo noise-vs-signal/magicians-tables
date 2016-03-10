@@ -14,10 +14,10 @@ $(function () {
 			attributeName = that.attr('name');
 
 		// When a checkbox is checked we need to write that in the filters object;
-		if(that.is(":checked")) {
+		if (that.is(":checked")) {
 
 			// If the filter for this attribute isn't created yet - do it.
-			if(!(filters[attributeName] && filters[attributeName].length)){
+			if (!(filters[attributeName] && filters[attributeName].length)){
 				filters[attributeName] = [];
 			}
 
@@ -29,7 +29,7 @@ $(function () {
 		}
 
 		// When a checkbox is unchecked we need to remove its value from the filters object.
-		if(!that.is(":checked")) {
+		if (!that.is(":checked")) {
 
 			if(filters[attributeName] && filters[attributeName].length && (filters[attributeName].indexOf(that.val()) != -1)){
 
@@ -144,7 +144,7 @@ $(function () {
 		};
 
 		// Execute the needed function depending on the url keyword (stored in temp).
-		if(map[temp]){
+		if (map[temp]){
 			map[temp]();
 		}
 		// If the keyword isn't listed in the above - render the error page.
@@ -228,7 +228,7 @@ $(function () {
 	function renderFilterResults(filters, entities){
 
         // This array contains all the possible filter criteria.
-		var criteria = ['manufacturer','storage','os','camera'],
+		var criteria = ['element'],
 			results = [],
 			isFiltered = false;
 
@@ -239,12 +239,12 @@ $(function () {
 		criteria.forEach(function (c) {
 
 			// Check if each of the possible filter criteria is actually in the filters object.
-			if(filters[c] && filters[c].length){
+			if (filters[c] && filters[c].length){
 
 				// After we've filtered the entities once, we want to keep filtering them.
 				// That's why we make the object we search in (entities) to equal the one with the results.
 				// Then the results array is cleared, so it can be filled with the newly filtered data.
-				if(isFiltered){
+				if (isFiltered){
 					entities = results;
 					results = [];
 				}
@@ -261,15 +261,17 @@ $(function () {
 						// If the entity has the same attribute value as the one in the filter
 						// push it inside the results array and mark the isFiltered flag true.
 
-						if(typeof item.attributes[c] == 'number'){
-							if(item.attributes[c] == filter){
+						if (typeof item.attributes[c] == 'number'){
+							if (item.attributes[c] == filter){
 								results.push(item);
 								isFiltered = true;
 							}
 						}
 
-						if(typeof item.attributes[c] == 'string'){
-							if(item.attributes[c].toLowerCase().indexOf(filter) != -1){
+						if (typeof item.attributes[c] == 'string'){
+                            console.log("Filter: " + filter + " Item Attribute: " + item.attributes[c] + " c: " + c);
+                    
+							if (item.attributes[c].toLowerCase().indexOf(filter.toLowerCase()) != -1){
 								results.push(item);
 								isFiltered = true;
 							}
@@ -286,7 +288,7 @@ $(function () {
 		});
 
 		// Call the renderEntitiesPage.
-		// As it's argument give the object with filtered entities.
+		// As its argument give the object with filtered entities.
 		renderEntitiesPage(results);
 	}
 

@@ -3,10 +3,8 @@
     "id": 1,
     "name": "Aries", 
     "attributes": {
-      "element": "Fire",
-      "storage": 16,
-      "os": "Android",
-      "camera": 15
+        "type": "Zodiac",
+        "element": "Fire"
     },
     "description": "Aries is the first astrological sign in the Zodiac, spanning the first 30 degrees of celestial longitude. Under the tropical zodiac, the Sun transits this sign mostly between March 21 and April 20 each year.",
     "image": {
@@ -18,10 +16,8 @@
     "id": 2,
     "name": "Taurus",
     "attributes": {
-      "element": "Earth",
-      "storage": 16,
-      "os": "iOS",
-      "camera": 8
+        "type": "Zodiac",
+        "element": "Earth"
     },
     "description": "Taurus is the second astrological sign in the present Zodiac. The symbol of the bull is based on the Cretan Bull, the white bull that fathered the Minotaur who was killed by Theseus.",
     "image": {
@@ -33,10 +29,8 @@
     "id": 3,
     "name": "Gemini",
     "attributes": {
-      "element": "Air",
-      "storage": 32,
-      "os": "Android",
-      "camera": 5
+        "type": "Zodiac",
+        "element": "Air"
     },
     "description": "Gemini is the third astrological sign in the Zodiac, originating from the constellation of Gemini. Under the tropical zodiac, the sun tends to transit this sign between May 22 and June 21. The symbol of the twins is based on the Dioscuri, two mortals that were granted shared godhood after death.",
     "image": {
@@ -48,15 +42,117 @@
     "id": 4,
     "name": "Cancer",
     "attributes": {
-      "element": "Water",
-      "storage": 32,
-      "os": "Android",
-      "camera": 5
+        "type": "Zodiac",
+        "element": "Water"
     },
     "description": "Cancer is the fourth astrological sign, which is associated with the constellation Cancer. The symbol of the crab is based on the Karkinos, a giant crab that harassed Heracles during his fight with the Hydra.",
     "image": {
-      "small": "assets/images/zodiac/Gemini.png",
-      "large": "assets/images/zodiac/Gemini.jpg"
+      "small": "assets/images/zodiac/Cancer.png",
+      "large": "assets/images/zodiac/Cancer.jpg"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Leo",
+    "attributes": {
+        "type": "Zodiac",
+        "element": "Fire"
+    },
+    "description": "Leo is the fifth astrological sign of the zodiac, originating from the constellation of Leo.  The symbol of the lion is based on the Nemean lion, a lion with an impenetrable hide.",
+    "image": {
+      "small": "assets/images/zodiac/Leo.png",
+      "large": "assets/images/zodiac/Leo-sign.png"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Virgo",
+    "attributes": {
+        "type": "Zodiac",
+        "element": "Earth"
+    },
+    "description": "Virgo is the sixth astrological sign in the Zodiac. he symbol of the maiden is based on Astraea. She was the last immortal to abandon Earth at the end of the Silver Age, when the gods fled to Olympus",
+    "image": {
+      "small": "assets/images/zodiac/Virgo.png",
+      "large": "assets/images/zodiac/Virgo.jpg"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Libra",
+    "attributes": {
+        "type": "Zodiac",
+        "element": "Air"
+    },
+    "description": "Libra is the seventh astrological sign in the Zodiac. he symbol of the scales is based on the Scales of Justice held by Themis, the Greek personification of divine law and custom.",
+    "image": {
+      "small": "assets/images/zodiac/Libra.png",
+      "large": "assets/images/zodiac/Libra.jpg"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Scorpio",
+    "attributes": {
+        "type": "Zodiac",
+        "element": "Water"
+    },
+    "description": "Scorpio is the eighth astrological sign in the Zodiac. The symbol of the scorpion is based on Scorpius, a giant scorpion sent by Gaia to kill Orion.",
+    "image": {
+      "small": "assets/images/zodiac/Scorpio.png",
+      "large": "assets/images/zodiac/Scorpio.jpg"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Sagittarius",
+    "attributes": {
+        "type": "Zodiac",
+        "element": "Fire"
+    },
+    "description": "Sagittarius is the ninth astrological sign, which is associated with the constellation Sagittarius. The symbol of the archer is based on the centaur Chiron, who mentored Achilles in archery.",
+    "image": {
+      "small": "assets/images/zodiac/Sagittarius.png",
+      "large": "assets/images/zodiac/Sagittarius.jpg"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Capricorn",
+    "attributes": {
+        "type": "Zodiac",
+        "element": "Earth"
+    },
+    "description": "Capricorn is the tenth astrological sign in the zodiac, originating from the constellation of Capricornus. Its symbol is based on the Sumerian primordial god of wisdom and waters, Enki with the head and upper body of a mountain goat, and the lower body and tail of a fish.",
+    "image": {
+      "small": "assets/images/zodiac/Capricorn.png",
+      "large": "assets/images/zodiac/Capricorn.jpg"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Aquarius",
+    "attributes": {
+        "type": "Zodiac",
+        "element": "Air"
+    },
+    "description": "Aquarius is the eleventh astrological sign in the Zodiac, originating from the constellation Aquarius. The water carrier represented by the zodiacal constellation Aquarius is Ganymede, a beautiful Phrygian youth.",
+    "image": {
+      "small": "assets/images/zodiac/Aquarius.png",
+      "large": "assets/images/zodiac/Aquarius.jpg"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Pisces",
+    "attributes": {
+        "type": "Zodiac",
+        "element": "Water"
+    },
+    "description": "Pisces is the twelfth astrological sign in the Zodiac, originating from the Pisces constellation. The symbol of the fish is derived from the ichthyocentaurs, who aided Aphrodite when she was born from the sea.",
+    "image": {
+      "small": "assets/images/zodiac/Pisces.png",
+      "large": "assets/images/zodiac/Pisces.jpg"
     }
   }
 ]
