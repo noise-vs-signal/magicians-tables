@@ -81,10 +81,6 @@
         "Empress Scale": "Gold Amber",
         "Sephirotic Colour": "Whitish Red"
     },
-    "image": {
-        "small": "assets/images/zodiac/Aries.svg",
-        "large": "assets/images/zodiac/Aries.svg"
-    },
     "url": "https://en.wikipedia.org/wiki/Aries_%28astrology%29",
     "description": "Aries is the first astrological sign in the Zodiac, spanning the first 30 degrees of celestial longitude. Under the tropical zodiac, the Sun transits this sign mostly between March 21 and April 20 each year."
   },

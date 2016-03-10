@@ -19,53 +19,24 @@
 			<div class="filters">
 				<form>
 					<div class="filter-criteria">
-						<span>Manufacturer</span>
-						<label><input type="checkbox" name="manufacturer" value="apple">Apple</label>
-						<label><input type="checkbox" name="manufacturer" value="samsung">Samsung</label>
-						<label><input type="checkbox" name="manufacturer" value="htc">HTC</label>
-						<label><input type="checkbox" name="manufacturer" value="nokia">Nokia</label>
-						<label><input type="checkbox" name="manufacturer" value="zte">ZTE</label>
-						<label><input type="checkbox" name="manufacturer" value="sony">Sony</label>
-					</div>
-
-					<div class="filter-criteria">
-						<span>Screen Size</span>
-						<label><input type="checkbox" value="16" name="storage">16 GB</label>
-						<label><input type="checkbox" value="32" name="storage">32 GB</label>
-					</div>
-
-					<div class="filter-criteria">
-						<span>OS</span>
-						<label><input type="checkbox" value="android" name="os">Android</label>
-						<label><input type="checkbox" value="ios" name="os">iOS</label>
-						<label><input type="checkbox" value="windows" name="os">Windows</label>
-					</div>
-
-					<div class="filter-criteria">
-						<span>Camera</span>
-						<label><input type="checkbox" value="5" name="camera">5 Mpx</label>
-						<label><input type="checkbox" value="8" name="camera">8 Mpx</label>
-						<label><input type="checkbox" value="12" name="camera">12 Mpx</label>
-						<label><input type="checkbox" value="15" name="camera">15 Mpx</label>
-					</div>
-
+						<span>Element</span>
+						<label><input type="checkbox" name="element" value="Fire">Fire</label>
+                        <label><input type="checkbox" name="element" value="Earth">Earth</label>
+                        <label><input type="checkbox" name="element" value="Air">Air</label>
+                        <label><input type="checkbox" name="element" value="Water">Water</label>
+                    </div>
 					<button>Clear filters</button>
-
 				</form>
-
 			</div>
 
 			<ul class="entities-list">
-				<script id="entities-template" type="x-handlebars-template">​
+				<script id="entities-template" type="x-handlebars-template">
 					{{#each this}}
 						<li data-index="{{id}}">
 							<a href="#" class="entity-image"><img src="{{image.small}}" height="130" alt="{{name}}"/></a>
 							<h2><a href="#"> {{name}} </a></h2>
 							<ul class="entity-description">
-								<li><span>Manufacturer: </span>{{specs.manufacturer}}</li>
-								<li><span>Storage: </span>{{specs.storage}} GB</li>
-								<li><span>OS: </span>{{specs.os}}</li>
-								<li><span>Camera: </span>{{specs.camera}} Mpx</li>
+								<li><span>Element: </span>{{attributes.element}}</li>
 							</ul>
 							<button>More Details</button>
 							<div class="highlight"></div>

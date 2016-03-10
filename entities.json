@@ -1,10 +1,9 @@
 [
   {
     "id": 1,
-    "name": "Aries",
-      
-    "specs": {
-      "manufacturer": "Sony",
+    "name": "Aries", 
+    "attributes": {
+      "element": "Fire",
       "storage": 16,
       "os": "Android",
       "camera": 15
@@ -18,8 +17,8 @@
   {
     "id": 2,
     "name": "Taurus",
-    "specs": {
-      "manufacturer": "Apple",
+    "attributes": {
+      "element": "Earth",
       "storage": 16,
       "os": "iOS",
       "camera": 8
@@ -33,8 +32,8 @@
   {
     "id": 3,
     "name": "Gemini",
-    "specs": {
-      "manufacturer": "HTC",
+    "attributes": {
+      "element": "Air",
       "storage": 32,
       "os": "Android",
       "camera": 5
@@ -47,87 +46,17 @@
   },
   {
     "id": 4,
-    "name": "Galaxy Alpha",
-    "price": 899,
-    "specs": {
-      "manufacturer": "Samsung",
+    "name": "Cancer",
+    "attributes": {
+      "element": "Water",
       "storage": 32,
       "os": "Android",
-      "camera": 12
-    },
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
-    "rating": 4,
-    "image": {
-      "small": "assets/images/galaxy-alpha.jpg",
-      "large": "assets/images/galaxy-alpha-large.jpg"
-    }
-  },
-  {
-    "id": 5,
-    "name": "Nokia Lumia",
-    "price": 450,
-    "specs": {
-      "manufacturer": "Nokia",
-      "storage": 16,
-      "os": "Windows",
       "camera": 5
     },
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
-    "rating": 4,
+    "description": "Cancer is the fourth astrological sign, which is associated with the constellation Cancer. The symbol of the crab is based on the Karkinos, a giant crab that harassed Heracles during his fight with the Hydra.",
     "image": {
-      "small": "assets/images/nokia-lumia.jpg",
-      "large": "assets/images/nokia-lumia-large.jpg"
-    }
-  },
-  {
-    "id": 6,
-    "name": "Zte Nubia",
-    "price": 399,
-    "specs": {
-      "manufacturer": "ZTE",
-      "storage": 32,
-      "os": "Android",
-      "camera": 12
-    },
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
-    "rating": 4,
-    "image": {
-      "small": "assets/images/zte-nubia.jpg",
-      "large": "assets/images/zte-nubia-large.jpg"
-    }
-  },
-  {
-    "id": 7,
-    "name": "Samsung Galaxy S5",
-    "price": 399,
-    "specs": {
-      "manufacturer": "Samsung",
-      "storage": 16,
-      "os": "Android",
-      "camera": 15
-    },
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
-    "rating": 4,
-    "image": {
-      "small": "assets/images/galaxy-s5.jpg",
-      "large": "assets/images/galaxy-s5-large.jpg"
-    }
-  },
-  {
-    "id": 8,
-    "name": "Iphone 5S",
-    "price": 399,
-    "specs": {
-      "manufacturer": "Apple",
-      "storage": 16,
-      "os": "iOS",
-      "camera": 8
-    },
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
-    "rating": 4,
-    "image": {
-      "small": "assets/images/iphone5s.jpg",
-      "large": "assets/images/iphone5s-large.jpg"
+      "small": "assets/images/zodiac/Gemini.png",
+      "large": "assets/images/zodiac/Gemini.jpg"
     }
   }
 ]

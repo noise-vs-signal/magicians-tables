@@ -11,18 +11,18 @@ $(function () {
 
 	checkboxes.click(function () {
 		var that = $(this),
-			specName = that.attr('name');
+			attributeName = that.attr('name');
 
 		// When a checkbox is checked we need to write that in the filters object;
 		if(that.is(":checked")) {
 
-			// If the filter for this specification isn't created yet - do it.
-			if(!(filters[specName] && filters[specName].length)){
-				filters[specName] = [];
+			// If the filter for this attribute isn't created yet - do it.
+			if(!(filters[attributeName] && filters[attributeName].length)){
+				filters[attributeName] = [];
 			}
 
 			//	Push values into the chosen filter array
-			filters[specName].push(that.val());
+			filters[attributeName].push(that.val());
 
 			// Change the url hash;
 			createQueryHash(filters);
@@ -31,18 +31,17 @@ $(function () {
 		// When a checkbox is unchecked we need to remove its value from the filters object.
 		if(!that.is(":checked")) {
 
-			if(filters[specName] && filters[specName].length && (filters[specName].indexOf(that.val()) != -1)){
+			if(filters[attributeName] && filters[attributeName].length && (filters[attributeName].indexOf(that.val()) != -1)){
 
 				// Find the checkbox value in the corresponding array inside the filters object.
-				var index = filters[specName].indexOf(that.val());
+				var index = filters[attributeName].indexOf(that.val());
 
 				// Remove it.
-				filters[specName].splice(index, 1);
+				filters[attributeName].splice(index, 1);
 
-				// If it was the last remaining value for this specification,
-				// delete the whole array.
-				if(!filters[specName].length){
-					delete filters[specName];
+				// If it was the last remaining value for this attribute, delete the whole array.
+				if(!filters[attributeName].length){
+					delete filters[attributeName];
 				}
 			}
 
@@ -134,7 +133,7 @@ $(function () {
 				try {
 					filters = JSON.parse(url);
 				}
-					// If it isn't a valid json, go back to homepage ( the rest of the code won't be executed ).
+				// If it isn't a valid json, go back to homepage ( the rest of the code won't be executed ).
 				catch(err) {
 					window.location.hash = '#';
 					return;
@@ -170,14 +169,12 @@ $(function () {
 		// Remember: every hashchange triggers the render function.
 		list.find('li').on('click', function (e) {
 			e.preventDefault();
-
 			var entityIndex = $(this).data('index');
-
 			window.location.hash = 'item/' + entityIndex;
 		})
 	}
 
-	// This function receives an object containing all the item we want to show.
+	// This function receives an object containing all the items we want to show.
 	function renderEntitiesPage(data){
 		var page = $('.all-entities'),
 			allEntities = $('.all-entities .entities-list > li');
@@ -261,18 +258,18 @@ $(function () {
 					// Iterate over the entities.
 					entities.forEach(function (item){
 
-						// If the entity has the same specification value as the one in the filter
+						// If the entity has the same attribute value as the one in the filter
 						// push it inside the results array and mark the isFiltered flag true.
 
-						if(typeof item.specs[c] == 'number'){
-							if(item.specs[c] == filter){
+						if(typeof item.attributes[c] == 'number'){
+							if(item.attributes[c] == filter){
 								results.push(item);
 								isFiltered = true;
 							}
 						}
 
-						if(typeof item.specs[c] == 'string'){
-							if(item.specs[c].toLowerCase().indexOf(filter) != -1){
+						if(typeof item.attributes[c] == 'string'){
+							if(item.attributes[c].toLowerCase().indexOf(filter) != -1){
 								results.push(item);
 								isFiltered = true;
 							}
